@@ -30,21 +30,42 @@ public class ConfigFragment extends Fragment {
 
         ApiClient client = ApiClient.get(requireContext());
         binding.editServerUrl.setText(client.baseUrl());
+        binding.editMistralKey.setText(client.getMistralKey());
 
-        binding.btnSave.setOnClickListener(v -> {
-            String url = binding.editServerUrl.getText().toString().trim();
-            if (url.isEmpty()) { binding.editServerUrl.setError("URL requise"); return; }
-            client.setBaseUrl(url);
-            Toast.makeText(requireContext(), "Serveur mis à jour", Toast.LENGTH_SHORT).show();
-        });
-
+        binding.btnSave.setOnClickListener(v -> save());
         binding.btnTest.setOnClickListener(v -> testConnection());
-
         binding.btnReset.setOnClickListener(v -> {
             binding.editServerUrl.setText(ApiClient.DEFAULT_URL);
             client.setBaseUrl(ApiClient.DEFAULT_URL);
             Toast.makeText(requireContext(), "Réinitialisé", Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void save() {
+        if (binding == null) return;
+        ApiClient client = ApiClient.get(requireContext());
+
+        String url = binding.editServerUrl.getText().toString().trim();
+        if (url.isEmpty()) { binding.editServerUrl.setError("URL requise"); return; }
+        client.setBaseUrl(url);
+
+        String key = binding.editMistralKey.getText().toString().trim();
+        client.setMistralKey(key);
+
+        if (!key.isEmpty()) {
+            NewsWorldApi api = new NewsWorldApi(requireContext());
+            client.executor().execute(() -> {
+                try {
+                    api.putMistralKey(key);
+                    runOnUi(() -> Toast.makeText(requireContext(), "Serveur + clé Mistral mis à jour", Toast.LENGTH_SHORT).show());
+                } catch (Exception e) {
+                    runOnUi(() -> Toast.makeText(requireContext(),
+                            "Serveur mis à jour — clé Mistral : " + e.getMessage(), Toast.LENGTH_LONG).show());
+                }
+            });
+        } else {
+            Toast.makeText(requireContext(), "Serveur mis à jour", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void testConnection() {

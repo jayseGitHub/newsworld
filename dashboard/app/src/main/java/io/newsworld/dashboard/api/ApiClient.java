@@ -20,7 +20,8 @@ import okhttp3.OkHttpClient;
 public class ApiClient {
 
     public static final String PREFS = "newsworld_prefs";
-    public static final String KEY_SERVER_URL = "server_url";
+    public static final String KEY_SERVER_URL  = "server_url";
+    public static final String KEY_MISTRAL_KEY = "mistral_key";
     public static final String DEFAULT_URL = "http://localhost:8090/api";
 
     private static ApiClient instance;
@@ -52,6 +53,14 @@ public class ApiClient {
 
     public void setBaseUrl(String url) {
         prefs.edit().putString(KEY_SERVER_URL, url).apply();
+    }
+
+    public String getMistralKey() {
+        return prefs.getString(KEY_MISTRAL_KEY, "");
+    }
+
+    public void setMistralKey(String key) {
+        prefs.edit().putString(KEY_MISTRAL_KEY, key).apply();
     }
 
     public OkHttpClient http() { return http; }

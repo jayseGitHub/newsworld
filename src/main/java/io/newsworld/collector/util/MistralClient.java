@@ -30,7 +30,7 @@ public class MistralClient {
 
     private final ObjectMapper objectMapper;
     private final LlmUsageRepository llmUsageRepository;
-    private final String apiKey;
+    private final NewsWorldProperties props;
     private final String modelTranslation;
     private final String modelAnalysis;
 
@@ -38,7 +38,7 @@ public class MistralClient {
                          NewsWorldProperties props) {
         this.objectMapper = objectMapper;
         this.llmUsageRepository = llmUsageRepository;
-        this.apiKey = props.getMistral().getApiKey();
+        this.props = props;
         this.modelTranslation = props.getMistral().getModelTranslation();
         this.modelAnalysis = props.getMistral().getModelAnalysis();
     }
@@ -54,6 +54,7 @@ public class MistralClient {
     }
 
     private String complete(String systemPrompt, String userMessage, String model, double temperature) throws IOException {
+        String apiKey = props.getMistral().getApiKey();
         if (apiKey == null || apiKey.isBlank()) {
             throw new IOException("Mistral API key not configured (newsworld.mistral.api-key)");
         }

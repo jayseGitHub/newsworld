@@ -69,6 +69,18 @@ public class NewsWorldApi {
         return get("/clusters/" + id, ClusterDto.class);
     }
 
+    // --- Config ---
+
+    public void putMistralKey(String key) throws IOException {
+        Request req = new Request.Builder()
+                .url(client.baseUrl() + "/config/mistral-key")
+                .put(RequestBody.create(key, MediaType.get("text/plain; charset=utf-8")))
+                .build();
+        try (okhttp3.Response resp = client.http().newCall(req).execute()) {
+            if (!resp.isSuccessful()) throw new IOException("HTTP " + resp.code());
+        }
+    }
+
     // --- Clusters (calendar) ---
 
     public List<Integer> getClusterDays(YearMonth month) throws IOException {

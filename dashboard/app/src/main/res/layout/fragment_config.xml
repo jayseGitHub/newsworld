@@ -19,6 +19,7 @@
             android:textColor="@color/colorOnSurfaceDim"
             android:layout_marginBottom="20dp"/>
 
+        <!-- Serveur -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,6 +53,41 @@
             android:textColor="@color/colorOnSurfaceDim"
             android:layout_marginBottom="24dp"/>
 
+        <!-- Clé API Mistral -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clé API Mistral"
+            android:textSize="12sp"
+            android:textColor="@color/colorOnSurfaceDim"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:hint="sk-..."
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_mistral_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/colorOnSurface"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Requise pour traduction et analyse. Appliquée au serveur au moment de la sauvegarde."
+            android:textSize="11sp"
+            android:textColor="@color/colorOnSurfaceDim"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Actions -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
