@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+newsworld:
+  collector:
+    purge-days: 30
+    bypass-time-check: true
+    schedule:
+      cron: "-"
+      purge-cron: "-"
+    http:
+      connect-timeout: 5000
+      read-timeout: 5000
+      user-agent: "NewsWorld-Test/1.0"

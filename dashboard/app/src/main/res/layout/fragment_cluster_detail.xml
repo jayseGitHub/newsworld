@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="4dp"
+        android:background="@color/colorSurface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="‹"
+            android:textSize="22sp"
+            style="@style/Widget.Material3.Button.TextButton"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cluster"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/colorOnSurface"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorOutline"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Topic -->
+            <TextView
+                android:id="@+id/text_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorOnSurface"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Metadata card -->
+            <com.google.android.material.card.MaterialCardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/colorCard"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorOutline"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/text_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:id="@+id/text_countries"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorOnSurface"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:id="@+id/text_continents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorOnSurfaceDim"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Synthesis -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SYNTHÈSE"
+                android:textSize="11sp"
+                android:letterSpacing="0.15"
+                android:textColor="@color/colorOnSurfaceDim"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/text_synthesis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/colorOnSurface"
+                android:layout_marginBottom="20dp"
+                android:text="Aucune synthèse disponible."/>
+
+            <!-- Sources -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SOURCES"
+                android:textSize="11sp"
+                android:letterSpacing="0.15"
+                android:textColor="@color/colorOnSurfaceDim"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/sources_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

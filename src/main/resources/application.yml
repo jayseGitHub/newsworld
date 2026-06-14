@@ -1,0 +1,103 @@
+spring:
+  application:
+    name: newsworld-collector
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/newsworld
+    username: newsworld
+    password: ${DB_PASSWORD:newsworld}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      pool-name: NewsWorldPool
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 50
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 20
+        queue-capacity: 100
+        keep-alive: 60s
+      thread-name-prefix: news-async-
+    scheduling:
+      pool:
+        size: 2
+      thread-name-prefix: news-scheduler-
+
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,scheduledtasks
+  endpoint:
+    health:
+      show-details: always
+
+newsworld:
+  collector:
+    purge-days: 30
+    bypass-time-check: false
+    cache:
+      evict-interval-ms: 3600000   # vide le cache de pages toutes les heures
+    schedule:
+      cron: "0 */15 * * * *"
+      purge-cron: "0 0 3 * * *"
+      collection-hour: 7
+      collection-window-minutes: 15
+    http:
+      connect-timeout: 10000
+      read-timeout: 15000
+      user-agent: "NewsWorld/1.0 (+https://github.com/newsworld)"
+
+  mistral:
+    api-key: ${MISTRAL_API_KEY}
+    model-translation: mistral-small-latest
+    model-analysis: mistral-medium-latest
+
+  translation:
+    target-language: fr
+
+  pipelines:
+    enrichment-batch-size: 50
+    enrichment-cron: "0 0 */2 * * *"
+    translation-batch-size: 20
+    translation-cron: "0 30 */6 * * *"
+    analysis-cron: "0 30 23 * * *"
+
+logging:
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5p) %clr([%15.15t]){faint} %clr(%logger{30}){cyan}: %m%n%wEx"
+  level:
+    io.newsworld: INFO
+    com.rometools: WARN

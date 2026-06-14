@@ -1,0 +1,52 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace = 'io.newsworld.dashboard'
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "io.newsworld.dashboard"
+        minSdk = 35
+        targetSdk = 36
+        versionCode = 1
+        versionName = "0.1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig  = true
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.core
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.drawerlayout
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.viewpager2
+    implementation libs.androidx.swiperefreshlayout
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.material
+    implementation libs.okhttp
+    implementation libs.gson
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit.ext
+    androidTestImplementation libs.androidx.espresso.core
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONFIGURATION"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:textColor="@color/colorOnSurfaceDim"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="URL du serveur"
+            android:textSize="12sp"
+            android:textColor="@color/colorOnSurfaceDim"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_server_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:singleLine="true"
+                android:textColor="@color/colorOnSurface"
+                android:hint="http://localhost:8090/api"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Utiliser adb reverse tcp:8090 tcp:8090 pour le tunnel USB"
+            android:textSize="11sp"
+            android:textColor="@color/colorOnSurfaceDim"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Sauvegarder"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorOnPrimary"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Tester la connexion"
+            android:layout_marginBottom="10dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Réinitialiser"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        <TextView
+            android:id="@+id/text_test_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorOnSurface"
+            android:padding="12dp"
+            android:background="@color/colorCard"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</ScrollView>

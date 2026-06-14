@@ -1,0 +1,81 @@
+=== NEWSWORLD DOCTOR REPORT ===
+
+--- RSS_FIXED : nouvelles URLs trouvées ---
+--- API_FOUND : endpoint alternatif découvert ---
+  CN  China                           [NEWS_SITEMAP] https://www.caixinglobal.com/news-sitemap.xml  (2034 items)
+  IR  Iran                            [NEWS_SITEMAP] https://www.iranintl.com/sitemap-news.xml  (750 items)
+  AE  UAE                             [NEWS_SITEMAP] https://www.thenationalnews.com/sitemap-news.xml  (100 items)
+  AM  Armenia                         [NEWS_SITEMAP] https://www.civilnet.am/google-news-sitemap.xml  (200 items)
+  GR  Greece                          [NEWS_SITEMAP] https://www.ekathimerini.com/sitemap-news.xml  (1 items)
+  SV  El Salvador                     [JSON_FEED] https://elfaro.net/api/articles  (61 items)
+  EC  Ecuador                         [NEWS_SITEMAP] https://gk.city/news-sitemap.xml  (4 items)
+  MH  Marshall Islands                [WORDPRESS_REST] https://marshallislandsjournal.com/wp-json/wp/v2/posts?per_page=5&_fields=id,title,link,date,excerpt  (5 items)
+
+--- BROKEN : intervention manuelle requise ---
+  ID  Indonesia                       media: https://www.kompas.com
+  MM  Myanmar                         media: https://www.irrawaddy.com
+  IQ  Iraq                            media: https://www.rudaw.net
+  MY  Malaysia                        media: https://www.malaysiakini.com
+  TW  Taiwan                          media: https://www.taiwannews.com.tw
+  LK  Sri Lanka                       media: https://www.dailymirror.lk
+  KH  Cambodia                        media: https://cambodianess.com
+  JO  Jordan                          media: https://www.jordantimes.com
+  TJ  Tajikistan                      media: https://news.tj
+  TM  Turkmenistan                    media: https://www.chrono-tm.org
+  LB  Lebanon                         media: https://www.lorientlejour.com
+  PS  Palestine                       media: https://www.maannews.com
+  OM  Oman                            media: https://www.timesofoman.com
+  KW  Kuwait                          media: https://www.kuwaittimes.com
+  MN  Mongolia                        media: https://ubpost.mongolnews.mn
+  BT  Bhutan                          media: https://www.kuenselonline.com
+  MV  Maldives                        media: https://edition.mv
+  BN  Brunei                          media: https://www.borneobulletin.com.bn
+  ET  Ethiopia                        media: https://addisstandard.com
+  SD  Sudan                           media: https://sudantribune.com
+  DZ  Algeria                         media: https://www.elwatan.com
+  MZ  Mozambique                      media: https://www.canalmoz.com
+  CM  Cameroon                        media: https://www.postnewsline.com
+  CI  Ivory Coast                     media: https://www.abidjan.net
+  ZW  Zimbabwe                        media: https://www.newsday.co.zw
+  RW  Rwanda                          media: https://www.newtimes.co.rw
+  TG  Togo                            media: https://www.togoforum.com
+  SL  Sierra Leone                    media: https://awoko.org
+  LY  Libya                           media: https://www.libyaobserver.ly
+  BW  Botswana                        media: https://www.mmegi.bw
+  LS  Lesotho                         media: https://www.lestimes.com
+  GW  Guinea-Bissau                   media: https://www.diariodebissau.net
+  GQ  Equatorial Guinea               media: https://www.equatorialguineareport.com
+  MU  Mauritius                       media: https://www.lexpress.mu
+  KM  Comoros                         media: https://www.alwatwan.net
+  EH  Western Sahara                  media: https://www.spsrasd.info
+  CV  Cabo Verde                      media: https://www.asemana.publ.cv
+  SC  Seychelles                      media: https://www.seychellesnewsagency.com
+  BY  Belarus                         media: https://nexta.tv
+  AL  Albania                         media: https://exit.al
+  MT  Malta                           media: https://timesofmalta.com
+  LI  Liechtenstein                   media: https://www.volksblatt.li
+  VA  Vatican                         media: https://www.vaticannews.va
+  MX  Mexico                          media: https://www.animalpolitico.com
+  GY  Guyana                          media: https://www.stabroeknews.com
+  SB  Solomon Islands                 media: https://www.solomonstarnews.com
+  WS  Samoa                           media: https://www.samoaobserver.ws
+  PW  Palau                           media: https://www.tiabelau.com
+
+--- SCRAPER_ONLY : pas de RSS, homepage parseable ---
+  IL  Israel                        
+  LA  Laos                          
+  SZ  Eswatini                      
+  BE  Belgium                       
+  PT  Portugal                      
+  DK  Denmark                       
+  FI  Finland                       
+  IE  Ireland                       
+  SI  Slovenia                      
+  DO  Dominican Republic            
+  PA  Panama                        
+  TT  Trinidad and Tobago           
+  BS  Bahamas                       
+  PE  Peru                          
+  PY  Paraguay                      
+  FJ  Fiji                          
+  VU  Vanuatu                       

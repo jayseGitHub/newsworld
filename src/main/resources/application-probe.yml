@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:./data/newsworld-probe;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+  liquibase:
+    enabled: true
+
+  main:
+    web-application-type: none   # pas de Tomcat, mode CLI
+
+newsworld:
+  collector:
+    bypass-time-check: true
+    schedule:
+      cron: "-"
+      purge-cron: "-"
+    cache:
+      evict-interval-ms: 86400000
+
+logging:
+  level:
+    io.newsworld: INFO
+    com.rometools: WARN
+    org.hibernate: WARN
+    org.springframework: WARN

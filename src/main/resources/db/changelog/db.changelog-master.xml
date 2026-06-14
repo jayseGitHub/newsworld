@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="001-create-countries" author="newsworld">
+        <createTable tableName="countries">
+            <column name="code" type="VARCHAR(3)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="continent" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="population" type="BIGINT"/>
+            <column name="week_day" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="media_name" type="VARCHAR(255)"/>
+            <column name="media_url" type="VARCHAR(2048)"/>
+            <column name="rss_url" type="VARCHAR(2048)"/>
+            <column name="rss_available" type="BOOLEAN" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="iana_timezone" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="language" type="VARCHAR(10)"/>
+        </createTable>
+        <createIndex tableName="countries" indexName="idx_countries_week_day">
+            <column name="week_day"/>
+        </createIndex>
+        <createIndex tableName="countries" indexName="idx_countries_continent">
+            <column name="continent"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="002-create-articles" author="newsworld">
+        <createSequence sequenceName="article_seq" startValue="1" incrementBy="50"/>
+        <createTable tableName="articles">
+            <column name="id" type="BIGINT" defaultValueSequenceNext="article_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="country_code" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="continent" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="source_url" type="VARCHAR(2048)"/>
+            <column name="original_title" type="VARCHAR(512)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="original_language" type="VARCHAR(10)"/>
+            <column name="translated_title" type="VARCHAR(512)"/>
+            <column name="original_summary" type="TEXT"/>
+            <column name="translated_summary" type="TEXT"/>
+            <column name="original_content" type="TEXT"/>
+            <column name="translated_content" type="TEXT"/>
+            <column name="published_at" type="TIMESTAMP"/>
+            <column name="collected_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expires_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="articles" indexName="idx_articles_country">
+            <column name="country_code"/>
+        </createIndex>
+        <createIndex tableName="articles" indexName="idx_articles_continent">
+            <column name="continent"/>
+        </createIndex>
+        <createIndex tableName="articles" indexName="idx_articles_published">
+            <column name="published_at"/>
+        </createIndex>
+        <createIndex tableName="articles" indexName="idx_articles_expires">
+            <column name="expires_at"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="003-create-article-topics" author="newsworld">
+        <createTable tableName="article_topics">
+            <column name="article_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_topics_article"
+                             references="articles(id)"
+                             deleteCascade="true"/>
+            </column>
+            <column name="topic" type="VARCHAR(255)"/>
+        </createTable>
+        <createIndex tableName="article_topics" indexName="idx_topics_article">
+            <column name="article_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="004-create-correlations" author="newsworld">
+        <createSequence sequenceName="correlation_seq" startValue="1" incrementBy="20"/>
+        <createTable tableName="correlations">
+            <column name="id" type="BIGINT" defaultValueSequenceNext="correlation_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="article_id_a" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="article_id_b" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="score" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="common_topic" type="VARCHAR(255)"/>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="correlations" indexName="idx_corr_article_a">
+            <column name="article_id_a"/>
+        </createIndex>
+        <createIndex tableName="correlations" indexName="idx_corr_article_b">
+            <column name="article_id_b"/>
+        </createIndex>
+        <createIndex tableName="correlations" indexName="idx_corr_score">
+            <column name="score"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="005-create-feed-cache" author="newsworld">
+        <createTable tableName="feed_cache">
+            <column name="country_code" type="VARCHAR(3)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="etag" type="VARCHAR(512)"/>
+            <column name="last_modified" type="VARCHAR(256)"/>
+            <column name="last_fetched_at" type="TIMESTAMP"/>
+            <column name="last_article_count" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <include file="db/changelog/db.changelog-data.xml"/>
+
+    <changeSet id="006-add-api-columns" author="newsworld">
+        <addColumn tableName="countries">
+            <column name="collection_type" type="VARCHAR(20)" defaultValue="RSS">
+                <constraints nullable="false"/>
+            </column>
+            <column name="api_url" type="VARCHAR(2048)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="007-seed-api-endpoints" author="newsworld">
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.caixinglobal.com/news-sitemap.xml"/>
+            <where>code = 'CN'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.iranintl.com/sitemap-news.xml"/>
+            <where>code = 'IR'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.irrawaddy.com/news-sitemap.xml"/>
+            <where>code = 'MM'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.thenationalnews.com/sitemap-news.xml"/>
+            <where>code = 'AE'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.civilnet.am/google-news-sitemap.xml"/>
+            <where>code = 'AM'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://www.ekathimerini.com/sitemap-news.xml"/>
+            <where>code = 'GR'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="JSON_API"/>
+            <column name="api_url" value="https://elfaro.net/api/articles"/>
+            <where>code = 'SV'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="WORDPRESS_REST"/>
+            <column name="api_url" value="https://marshallislandsjournal.com/wp-json/wp/v2/posts?per_page=10&amp;_fields=id,title,link,date,excerpt"/>
+            <where>code = 'MH'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="008-seed-ec-api-endpoint" author="newsworld">
+        <update tableName="countries">
+            <column name="collection_type" value="NEWS_SITEMAP"/>
+            <column name="api_url" value="https://gk.city/news-sitemap.xml"/>
+            <where>code = 'EC'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="009-pipeline-schema" author="newsworld">
+        <!-- Pipeline tracking columns on articles -->
+        <addColumn tableName="articles">
+            <column name="content_fetched_at" type="TIMESTAMP"/>
+            <column name="translated_at" type="TIMESTAMP"/>
+        </addColumn>
+
+        <!-- Mark WP articles (already have originalSummary) as enriched -->
+        <sql>UPDATE articles SET content_fetched_at = collected_at WHERE original_summary IS NOT NULL AND original_summary != ''</sql>
+
+        <!-- Article clusters from daily analysis -->
+        <createSequence sequenceName="cluster_seq" startValue="1" incrementBy="10"/>
+        <createTable tableName="article_clusters">
+            <column name="id" type="BIGINT" defaultValueSequenceNext="cluster_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cluster_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="topic" type="VARCHAR(512)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="synthesis" type="TEXT"/>
+            <column name="relevance_score" type="DOUBLE"/>
+            <column name="article_count" type="INT"/>
+            <column name="country_count" type="INT"/>
+            <column name="continent_count" type="INT"/>
+            <column name="countries_list" type="VARCHAR(1000)"/>
+            <column name="continents_list" type="VARCHAR(200)"/>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="article_clusters" indexName="idx_clusters_date">
+            <column name="cluster_date"/>
+        </createIndex>
+        <createIndex tableName="article_clusters" indexName="idx_clusters_score">
+            <column name="relevance_score"/>
+        </createIndex>
+
+        <!-- Join table: cluster ↔ articles -->
+        <createTable tableName="cluster_articles">
+            <column name="cluster_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_ca_cluster"
+                             references="article_clusters(id)"
+                             deleteCascade="true"/>
+            </column>
+            <column name="article_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_ca_article"
+                             references="articles(id)"
+                             deleteCascade="true"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="cluster_articles" columnNames="cluster_id,article_id"
+                       constraintName="pk_cluster_articles"/>
+
+        <!-- AM and GR: revert to RSS (their sitemaps are Cloudflare-protected) -->
+        <update tableName="countries">
+            <column name="collection_type" value="RSS"/>
+            <column name="api_url"/>
+            <where>code = 'AM'</where>
+        </update>
+        <update tableName="countries">
+            <column name="collection_type" value="RSS"/>
+            <column name="api_url"/>
+            <where>code = 'GR'</where>
+        </update>
+    </changeSet>
+
+
+    <changeSet id="010-create-llm-usage" author="newsworld">
+        <createSequence sequenceName="llm_usage_seq" startValue="1" incrementBy="10"/>
+        <createTable tableName="llm_usage">
+            <column name="id" type="BIGINT" defaultValueSequenceNext="llm_usage_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="called_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pipeline" type="VARCHAR(20)"/>
+            <column name="model" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="prompt_tokens" type="INT"/>
+            <column name="completion_tokens" type="INT"/>
+            <column name="total_tokens" type="INT"/>
+            <column name="duration_ms" type="INT"/>
+        </createTable>
+        <createIndex tableName="llm_usage" indexName="idx_llm_usage_called_at">
+            <column name="called_at"/>
+        </createIndex>
+        <createIndex tableName="llm_usage" indexName="idx_llm_usage_pipeline">
+            <column name="pipeline"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

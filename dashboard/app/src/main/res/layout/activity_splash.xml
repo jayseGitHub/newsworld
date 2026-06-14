@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NewsWorld"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textSize="16sp"
+        android:textColor="@color/colorOnSurface"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- État connexion OK -->
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connexion au serveur…"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="14sp"/>
+
+    <!-- Formulaire config — visible seulement si échec -->
+    <LinearLayout
+        android:id="@+id/configPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="URL du serveur"
+            android:textColor="@color/colorOnSurface"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="http://localhost:8090/api"
+            android:inputType="textUri"
+            android:textColor="@color/colorOnSurface"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se connecter"
+            android:backgroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+</LinearLayout>

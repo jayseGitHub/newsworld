@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:h2:./data/newsworld-doctor;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 3
+      minimum-idle: 1
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+  liquibase:
+    enabled: true
+
+  main:
+    web-application-type: none
+
+newsworld:
+  collector:
+    bypass-time-check: true
+    schedule:
+      cron: "-"
+      purge-cron: "-"
+    cache:
+      evict-interval-ms: 86400000
+    doctor:
+      # Tester aussi les pays qui fonctionnent déjà (full audit) ou seulement les cassés
+      full-audit: false
+      # Timeout court pour le doctor (on veut aller vite)
+      connect-timeout: 8000
+      read-timeout: 10000
+
+logging:
+  level:
+    io.newsworld: INFO
+    com.rometools: WARN
+    org.hibernate: WARN
+    org.springframework: WARN

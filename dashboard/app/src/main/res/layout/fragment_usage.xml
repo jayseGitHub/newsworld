@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Total global -->
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:textColor="@color/colorOnSurfaceDim"
+        android:background="@color/colorSurface"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorOutline"/>
+
+    <!-- Date navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="4dp"
+        android:background="@color/colorSurface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_prev_day"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="‹"
+            android:textSize="20sp"
+            style="@style/Widget.Material3.Button.TextButton"/>
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/colorOnSurface"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next_day"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="›"
+            android:textSize="20sp"
+            style="@style/Widget.Material3.Button.TextButton"/>
+
+    </LinearLayout>
+
+    <!-- Day summary -->
+    <TextView
+        android:id="@+id/text_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:textColor="@color/colorOnSurface"
+        android:background="@color/colorCard"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorOutline"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_usage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

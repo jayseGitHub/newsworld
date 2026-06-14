@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette dark navy cohérente -->
+    <color name="colorBackground">#0A1628</color>
+    <color name="colorSurface">#0F1E35</color>
+    <color name="colorCard">#162032</color>
+    <color name="colorCardHighlight">#1C2C42</color>
+    <color name="colorPrimary">#4FC3F7</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+    <color name="colorOnPrimary">#0A1628</color>
+    <color name="colorOnSurface">#E8EAF6</color>
+    <color name="colorOnSurfaceDim">#7B9FC4</color>
+    <color name="colorOutline">#1E3050</color>
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorWarning">#FFA726</color>
+    <color name="colorError">#EF5350</color>
+    <!-- Compatibilité ancienne palette -->
+    <color name="colorOnSurfaceVariant">#7B9FC4</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

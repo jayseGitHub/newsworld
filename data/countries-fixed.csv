@@ -1,0 +1,194 @@
+code,name,continent,population,week_day,media_name,media_url,rss_url,rss_available,iana_timezone,language
+IN,India,Asie,1441000000,1,The Hindu,https://www.thehindu.com,https://www.thehindu.com/feeder/default.rss,true,Asia/Kolkata,en
+CN,China,Asie,1419000000,1,Caixin,https://www.caixinglobal.com,https://www.caixinglobal.com/rss/,false,Asia/Shanghai,zh
+ID,Indonesia,Asie,279000000,1,Kompas,https://www.kompas.com,https://rss.kompas.com/,false,Asia/Jakarta,id
+PK,Pakistan,Asie,246000000,1,Dawn,https://www.dawn.com,https://www.dawn.com/feeds/home,true,Asia/Karachi,en
+BD,Bangladesh,Asie,174000000,1,The Daily Star,https://www.thedailystar.net,https://www.thedailystar.net/rss.xml,true,Asia/Dhaka,en
+JP,Japan,Asie,123000000,1,Asahi Shimbun,https://www.asahi.com/ajw,https://www.asahi.com/rss/asahi/newsheadlines.rdf,true,Asia/Tokyo,ja
+PH,Philippines,Asie,117000000,1,Rappler,https://www.rappler.com,https://www.rappler.com/feed/,true,Asia/Manila,en
+VN,Vietnam,Asie,99000000,2,VnExpress,https://vnexpress.net,https://vnexpress.net/rss/tin-moi-nhat.rss,true,Asia/Ho_Chi_Minh,vi
+IR,Iran,Asie,91000000,2,Iran International,https://www.iranintl.com,https://www.iranintl.com/en/rss.xml,false,Asia/Tehran,fa
+TR,Turkey,Asie,86000000,2,Cumhuriyet,https://www.cumhuriyet.com.tr,https://www.cumhuriyet.com.tr/rss/son_dakika.xml,true,Europe/Istanbul,tr
+TH,Thailand,Asie,72000000,2,Khaosod English,https://www.khaosodenglish.com,https://www.khaosodenglish.com/feed/,true,Asia/Bangkok,th
+MM,Myanmar,Asie,54000000,2,The Irrawaddy,https://www.irrawaddy.com,https://www.irrawaddy.com/feed,false,Asia/Yangon,my
+KR,South Korea,Asie,52000000,2,Hankyoreh,https://english.hani.co.kr,https://english.hani.co.kr/rss,true,Asia/Seoul,ko
+IQ,Iraq,Asie,43000000,2,Rudaw,https://www.rudaw.net,https://www.rudaw.net/english/feed,false,Asia/Baghdad,ar
+AF,Afghanistan,Asie,43000000,3,TOLOnews,https://tolonews.com,https://tolonews.com/rss.xml,true,Asia/Kabul,ps
+SA,Saudi Arabia,Asie,37000000,3,Arab News,https://www.arabnews.com,https://www.arabnews.com/rss.xml,true,Asia/Riyadh,ar
+UZ,Uzbekistan,Asie,36000000,3,Kun.uz,https://kun.uz,https://kun.uz/rss/,true,Asia/Tashkent,uz
+MY,Malaysia,Asie,34000000,3,Malaysiakini,https://www.malaysiakini.com,https://www.malaysiakini.com/rss,false,Asia/Kuala_Lumpur,ms
+YE,Yemen,Asie,34000000,3,Yemen Monitor,https://www.yemenmonitor.com,https://www.yemenmonitor.com/feed/,true,Asia/Aden,ar
+NP,Nepal,Asie,30000000,3,The Kathmandu Post,https://kathmandupost.com,https://kathmandupost.com/rss,true,Asia/Kathmandu,ne
+KP,North Korea,Asie,26000000,3,NK News,https://www.nknews.org,https://www.nknews.org/feed/,true,Asia/Pyongyang,ko
+TW,Taiwan,Asie,23500000,4,Taiwan News,https://www.taiwannews.com.tw,https://www.taiwannews.com.tw/rss,false,Asia/Taipei,zh
+SY,Syria,Asie,22000000,4,Syria Direct,https://syriadirect.org,https://syriadirect.org/feed/,true,Asia/Damascus,ar
+LK,Sri Lanka,Asie,22000000,4,Daily Mirror,https://www.dailymirror.lk,https://www.dailymirror.lk/rss,false,Asia/Colombo,si
+KZ,Kazakhstan,Asie,20000000,4,Vlast.kz,https://vlast.kz,https://vlast.kz/feed/,true,Asia/Almaty,kk
+KH,Cambodia,Asie,17000000,4,Cambodianess,https://cambodianess.com,https://cambodianess.com/feed/,false,Asia/Phnom_Penh,km
+JO,Jordan,Asie,11000000,4,Jordan Times,https://www.jordantimes.com,https://www.jordantimes.com/rss.xml,false,Asia/Amman,ar
+TJ,Tajikistan,Asie,10200000,4,Asia-Plus,https://news.tj,https://news.tj/rss.xml,false,Asia/Dushanbe,tg
+AZ,Azerbaijan,Asie,10100000,5,Meydan TV,https://meydan.tv,https://meydan.tv/en/feed/,true,Asia/Baku,az
+AE,UAE,Asie,9900000,5,The National,https://www.thenationalnews.com,https://www.thenationalnews.com/rss.xml,false,Asia/Dubai,ar
+IL,Israel,Asie,9700000,5,Haaretz,https://www.haaretz.com,https://www.haaretz.com/srv/haaretz-items,false,Asia/Jerusalem,he
+LA,Laos,Asie,7700000,5,Vientiane Times,https://vientianetimes.org.la,,false,Asia/Vientiane,lo
+KG,Kyrgyzstan,Asie,7000000,5,Kloop.kg,https://kloop.kg,https://kloop.kg/feed/,true,Asia/Bishkek,ky
+TM,Turkmenistan,Asie,6100000,5,Chronicles of Turkmenistan,https://www.chrono-tm.org,https://www.chrono-tm.org/feed/,false,Asia/Ashgabat,tk
+SG,Singapore,Asie,6000000,5,CNA,https://www.channelnewsasia.com,https://www.channelnewsasia.com/api/v1/rss-outbound-feed,true,Asia/Singapore,en
+LB,Lebanon,Asie,5500000,6,L'Orient Le Jour,https://www.lorientlejour.com,https://www.lorientlejour.com/rss.xml,false,Asia/Beirut,fr
+PS,Palestine,Asie,5500000,6,Ma'an News Agency,https://www.maannews.com,https://www.maannews.com/rss.aspx,false,Asia/Gaza,ar
+OM,Oman,Asie,4700000,6,Times of Oman,https://www.timesofoman.com,https://www.timesofoman.com/rss,false,Asia/Muscat,ar
+KW,Kuwait,Asie,4300000,6,Kuwait Times,https://www.kuwaittimes.com,https://www.kuwaittimes.com/feed/,false,Asia/Kuwait,ar
+GE,Georgia,Asie,3700000,6,Civil.ge,https://civil.ge,https://civil.ge/feed,true,Asia/Tbilisi,ka
+MN,Mongolia,Asie,3400000,6,UB Post,https://ubpost.mongolnews.mn,https://ubpost.mongolnews.mn/feed/,false,Asia/Ulaanbaatar,mn
+AM,Armenia,Asie,2800000,6,CivilNet,https://www.civilnet.am,https://www.civilnet.am/feed/,false,Asia/Yerevan,hy
+QA,Qatar,Asie,2700000,7,Al Jazeera,https://www.aljazeera.com,https://www.aljazeera.com/xml/rss/all.xml,true,Asia/Qatar,ar
+BH,Bahrain,Asie,1800000,7,Bahrain Mirror,https://www.bahrainmirror.com,https://www.bahrainmirror.com/rss.xml,true,Asia/Bahrain,ar
+TL,Timor-Leste,Asie,1400000,7,Tatoli Agency,https://www.tatoli.tl,https://tatoli.tl/feed/,true,Asia/Dili,pt
+CY,Cyprus,Asie,1300000,7,Cyprus Mail,https://cyprus-mail.com,https://cyprus-mail.com/feed/,true,Asia/Nicosia,el
+BT,Bhutan,Asie,800000,7,Kuensel,https://www.kuenselonline.com,https://www.kuenselonline.com/feed/,false,Asia/Thimphu,dz
+MV,Maldives,Asie,500000,7,The Edition,https://edition.mv,https://edition.mv/feed,false,Indian/Maldives,dv
+BN,Brunei,Asie,450000,7,Borneo Bulletin,https://www.borneobulletin.com.bn,https://www.borneobulletin.com.bn/feed/,false,Asia/Brunei,ms
+NG,Nigeria,Afrique,229000000,1,Punch,https://punchng.com,https://punchng.com/feed/,true,Africa/Lagos,en
+ET,Ethiopia,Afrique,129000000,1,Addis Standard,https://addisstandard.com,https://addisstandard.com/feed/,false,Africa/Addis_Ababa,am
+EG,Egypt,Afrique,106000000,1,Mada Masr,https://www.madamasr.com,https://www.madamasr.com/en/feed/,true,Africa/Cairo,ar
+CD,DR Congo,Afrique,102000000,1,Radio Okapi,https://www.radiookapi.net,https://www.radiookapi.net/feed/,true,Africa/Kinshasa,fr
+TZ,Tanzania,Afrique,67000000,1,The Citizen,https://www.thecitizen.co.tz,https://www.thecitizen.co.tz/rss.xml,true,Africa/Dar_es_Salaam,sw
+ZA,South Africa,Afrique,61000000,1,Daily Maverick,https://www.dailymaverick.co.za,https://www.dailymaverick.co.za/rss/,true,Africa/Johannesburg,en
+KE,Kenya,Afrique,56000000,1,Daily Nation,https://nation.africa,https://nation.africa/kenya/rss.xml,true,Africa/Nairobi,en
+UG,Uganda,Afrique,49000000,1,Daily Monitor,https://www.monitor.co.ug,https://www.monitor.co.ug/rss.xml,true,Africa/Kampala,en
+SD,Sudan,Afrique,47000000,2,Sudan Tribune,https://sudantribune.com,https://sudantribune.com/spip.php?page=backend,false,Africa/Khartoum,ar
+DZ,Algeria,Afrique,46000000,2,El Watan,https://www.elwatan.com,https://www.elwatan.com/rss.php,false,Africa/Algiers,ar
+AO,Angola,Afrique,37000000,2,Maka Angola,https://www.makaangola.org,https://www.makaangola.org/feed/,true,Africa/Luanda,pt
+GH,Ghana,Afrique,34000000,2,Graphic Online,https://www.graphic.com.gh,https://www.graphic.com.gh/?format=feed&type=rss,true,Africa/Accra,en
+MZ,Mozambique,Afrique,33000000,2,Canal de Mocambique,https://www.canalmoz.com,,false,Africa/Maputo,pt
+CM,Cameroon,Afrique,29000000,2,The Post,https://www.postnewsline.com,,false,Africa/Douala,fr
+MG,Madagascar,Afrique,28000000,2,L'Express de Madagascar,https://www.lexpress.mg,https://www.lexpress.mg/feeds/posts/default,true,Indian/Antananarivo,fr
+CI,Ivory Coast,Afrique,27000000,2,Abidjan.net,https://www.abidjan.net,https://www.abidjan.net/rss/,false,Africa/Abidjan,fr
+NE,Niger,Afrique,26000000,3,Tamtam Info,https://www.tamtaminfo.com,https://www.tamtaminfo.com/feed/,true,Africa/Niamey,fr
+BF,Burkina Faso,Afrique,23000000,3,L'Observateur Paalga,https://www.lobservateur.bf,https://www.lobservateur.bf/index.php?format=feed&type=rss,true,Africa/Ouagadougou,fr
+ML,Mali,Afrique,23000000,3,Mali Actu,https://maliactu.net,https://maliactu.net/feed/,true,Africa/Bamako,fr
+MW,Malawi,Afrique,21000000,3,The Nation Malawi,https://www.mwnation.com,https://www.mwnation.com/feed/,true,Africa/Blantyre,en
+ZM,Zambia,Afrique,20000000,3,Lusaka Times,https://www.lusakatimes.com,https://www.lusakatimes.com/feed/,true,Africa/Lusaka,en
+SO,Somalia,Afrique,18000000,3,Hiiraan Online,https://www.hiiraan.com,https://hiiraan.com/news.xml,true,Africa/Mogadishu,so
+TD,Chad,Afrique,18000000,3,Alwihda Info,https://www.alwihdainfo.com,https://www.alwihdainfo.com/rss/,true,Africa/Ndjamena,fr
+SN,Senegal,Afrique,17000000,3,Senego,https://senego.com,https://senego.com/feed/,true,Africa/Dakar,fr
+ZW,Zimbabwe,Afrique,16000000,4,NewsDay Zimbabwe,https://www.newsday.co.zw,https://www.newsday.co.zw/feed/,false,Africa/Harare,en
+GN,Guinea,Afrique,14000000,4,Guinee Matin,https://www.guineematin.com,https://www.guineematin.com/feed/,true,Africa/Conakry,fr
+RW,Rwanda,Afrique,14000000,4,The New Times,https://www.newtimes.co.rw,https://www.newtimes.co.rw/feed/,false,Africa/Kigali,en
+BJ,Benin,Afrique,13000000,4,Benin Web TV,https://www.beninwebtv.com,https://beninwebtv.com/feed.xml,true,Africa/Porto-Novo,fr
+BI,Burundi,Afrique,13000000,4,Iwacu,https://www.iwacu-burundi.org,https://www.iwacu-burundi.org/feed/,true,Africa/Bujumbura,fr
+TN,Tunisia,Afrique,12000000,4,Inkyfada,https://inkyfada.com,https://inkyfada.com/fr/feed/,true,Africa/Tunis,ar
+SS,South Sudan,Afrique,11000000,4,Eye Radio,https://www.eyeradio.org,https://www.eyeradio.org/feed/,true,Africa/Juba,en
+TG,Togo,Afrique,9000000,5,Togoforum,https://www.togoforum.com,https://www.togoforum.com/feed/,false,Africa/Lome,fr
+SL,Sierra Leone,Afrique,8500000,5,Awoko,https://awoko.org,https://awoko.org/feed/,false,Africa/Freetown,en
+LY,Libya,Afrique,7200000,5,Libya Observer,https://www.libyaobserver.ly,https://www.libyaobserver.ly/feed/,false,Africa/Tripoli,ar
+CG,Congo Republic,Afrique,6000000,5,Adiac Congo,https://www.adiac-congo.com,https://www.adiac-congo.com/rss.xml,true,Africa/Brazzaville,fr
+MR,Mauritania,Afrique,4700000,5,Cridem,https://www.cridem.org,https://www.cridem.org/rss/actualites.xml,true,Africa/Nouakchott,ar
+ER,Eritrea,Afrique,3700000,5,Awate.com,https://awate.com,https://awate.com/feed/,true,Africa/Asmara,ti
+NA,Namibia,Afrique,2800000,5,The Namibian,https://www.namibian.com.na,https://www.namibian.com.na/feed/,true,Africa/Windhoek,en
+GM,Gambia,Afrique,2700000,6,The Point,https://www.thepoint.gm,https://thepoint.gm/posts/rss/xml,true,Africa/Banjul,en
+BW,Botswana,Afrique,2600000,6,Mmegi,https://www.mmegi.bw,,false,Africa/Gaborone,en
+GA,Gabon,Afrique,2400000,6,Gabon Review,https://www.gabonreview.com,https://www.gabonreview.com/feed/,true,Africa/Libreville,fr
+LS,Lesotho,Afrique,2200000,6,Lesotho Times,https://www.lestimes.com,https://www.lestimes.com/feed/,false,Africa/Maseru,en
+GW,Guinea-Bissau,Afrique,2000000,6,Diario de Bissau,https://www.diariodebissau.net,,false,Africa/Bissau,pt
+GQ,Equatorial Guinea,Afrique,1500000,6,Equatorial Guinea Report,https://www.equatorialguineareport.com,https://www.equatorialguineareport.com/feed/,false,Africa/Malabo,es
+MU,Mauritius,Afrique,1300000,6,L'Express Maurice,https://www.lexpress.mu,https://www.lexpress.mu/rss/,false,Indian/Mauritius,fr
+SZ,Eswatini,Afrique,1200000,7,Times of Swaziland,https://www.times.co.sz,https://www.times.co.sz/feed/,false,Africa/Mbabane,en
+DJ,Djibouti,Afrique,1000000,7,La Nation de Djibouti,https://www.lanation.dj,https://www.lanation.dj/feed/,true,Africa/Djibouti,fr
+KM,Comoros,Afrique,900000,7,Al-Watwan,https://www.alwatwan.net,,false,Indian/Comoro,ar
+EH,Western Sahara,Afrique,600000,7,SPS,https://www.spsrasd.info,,false,Africa/El_Aaiun,ar
+CV,Cabo Verde,Afrique,600000,7,A Semana,https://www.asemana.publ.cv,https://www.asemana.publ.cv/feed/,false,Atlantic/Cape_Verde,pt
+ST,Sao Tome,Afrique,230000,7,Tela Non,https://www.telanon.info,https://www.telanon.info/feed/,true,Africa/Sao_Tome,pt
+SC,Seychelles,Afrique,100000,7,Seychelles News Agency,https://www.seychellesnewsagency.com,https://www.seychellesnewsagency.com/feed/,false,Indian/Mahe,en
+RU,Russia,Europe,144000000,1,Meduza,https://meduza.io,https://meduza.io/rss/en/all,true,Europe/Moscow,ru
+DE,Germany,Europe,84000000,1,Der Spiegel,https://www.spiegel.de,https://www.spiegel.de/international/index.rss,true,Europe/Berlin,de
+GB,United Kingdom,Europe,68000000,1,The Guardian,https://www.theguardian.com,https://www.theguardian.com/world/rss,true,Europe/London,en
+FR,France,Europe,68000000,1,Le Monde,https://www.lemonde.fr,https://www.lemonde.fr/rss/une.xml,true,Europe/Paris,fr
+IT,Italy,Europe,59000000,1,La Repubblica,https://www.repubblica.it,https://www.repubblica.it/rss/homepage/rss2.0.xml,true,Europe/Rome,it
+ES,Spain,Europe,48000000,1,El Pais,https://elpais.com,https://elpais.com/rss/elpais/portada.xml,true,Europe/Madrid,es
+UA,Ukraine,Europe,43000000,1,Ukrainska Pravda,https://www.pravda.com.ua,https://www.pravda.com.ua/eng/rss/,true,Europe/Kyiv,uk
+PL,Poland,Europe,37000000,2,Gazeta Wyborcza,https://wyborcza.pl,https://wyborcza.pl/pub/rss/najnowsze_wyborcza.xml,true,Europe/Warsaw,pl
+RO,Romania,Europe,19000000,2,G4Media,https://www.g4media.ro,https://www.g4media.ro/feed/,true,Europe/Bucharest,ro
+NL,Netherlands,Europe,18000000,2,NRC,https://www.nrc.nl,https://www.nrc.nl/rss/,true,Europe/Amsterdam,nl
+BE,Belgium,Europe,11700000,2,RTBF,https://www.rtbf.be,https://www.rtbf.be/rss/info,false,Europe/Brussels,fr
+CZ,Czech Republic,Europe,10900000,2,Denik N,https://denikn.cz,https://denikn.cz/feed/,true,Europe/Prague,cs
+SE,Sweden,Europe,10600000,2,Dagens Nyheter,https://www.dn.se,https://www.dn.se/rss/,true,Europe/Stockholm,sv
+GR,Greece,Europe,10400000,2,Kathimerini,https://www.ekathimerini.com,https://www.ekathimerini.com/rss/,false,Europe/Athens,el
+PT,Portugal,Europe,10200000,3,Publico,https://www.publico.pt,https://www.publico.pt/rss,false,Europe/Lisbon,pt
+HU,Hungary,Europe,9700000,3,Telex.hu,https://telex.hu,https://telex.hu/rss,true,Europe/Budapest,hu
+BY,Belarus,Europe,9400000,3,Nexta,https://nexta.tv,,false,Europe/Minsk,be
+AT,Austria,Europe,9100000,3,Der Standard,https://www.derstandard.at,https://www.derstandard.at/rss,true,Europe/Vienna,de
+CH,Switzerland,Europe,8900000,3,Neue Zurcher Zeitung,https://www.nzz.ch,https://www.nzz.ch/recent.rss,true,Europe/Zurich,de
+RS,Serbia,Europe,6600000,3,N1 Serbia,https://rs.n1info.com,https://rs.n1info.com/feed/,true,Europe/Belgrade,sr
+BG,Bulgaria,Europe,6500000,3,Capital.bg,https://www.capital.bg,https://www.capital.bg/rss/,true,Europe/Sofia,bg
+DK,Denmark,Europe,5900000,4,Politiken,https://politiken.dk,https://politiken.dk/rss/,false,Europe/Copenhagen,da
+FI,Finland,Europe,5600000,4,Helsingin Sanomat,https://www.hs.fi,https://www.hs.fi/rss/,false,Europe/Helsinki,fi
+SK,Slovakia,Europe,5500000,4,Dennik N,https://dennikn.sk,https://dennikn.sk/feed/,true,Europe/Bratislava,sk
+NO,Norway,Europe,5500000,4,Aftenposten,https://www.aftenposten.no,https://www.aftenposten.no/rss/,true,Europe/Oslo,no
+IE,Ireland,Europe,5100000,4,The Irish Times,https://www.irishtimes.com,https://www.irishtimes.com/rss/,false,Europe/Dublin,en
+HR,Croatia,Europe,3900000,4,Index.hr,https://www.index.hr,https://www.index.hr/rss/,true,Europe/Zagreb,hr
+BA,Bosnia,Europe,3200000,4,BIRN BiH,https://balkaninsight.com,https://balkaninsight.com/feed/,true,Europe/Sarajevo,bs
+LT,Lithuania,Europe,2900000,5,Delfi,https://www.delfi.lt,https://www.delfi.lt/rss.xml,true,Europe/Vilnius,lt
+AL,Albania,Europe,2800000,5,Exit News,https://exit.al,https://exit.al/feed/,false,Europe/Tirane,sq
+MD,Moldova,Europe,2600000,5,Ziarul de Garda,https://www.zdg.md,https://www.zdg.md/feed/,true,Europe/Chisinau,ro
+MK,North Macedonia,Europe,2100000,5,Meta.mk,https://meta.mk,https://meta.mk/rss/,true,Europe/Skopje,mk
+SI,Slovenia,Europe,2100000,5,Necenzurirano,https://necenzurirano.si,https://necenzurirano.si/feed/,false,Europe/Ljubljana,sl
+LV,Latvia,Europe,1800000,5,LSM,https://www.lsm.lv,https://www.lsm.lv/rss/,true,Europe/Riga,lv
+EE,Estonia,Europe,1300000,5,ERR,https://www.err.ee,https://www.err.ee/rss/,true,Europe/Tallinn,et
+LU,Luxembourg,Europe,700000,6,Luxemburger Wort,https://www.wort.lu,https://www.wort.lu/rss/,true,Europe/Luxembourg,fr
+ME,Montenegro,Europe,620000,6,Vijesti,https://www.vijesti.me,https://www.vijesti.me/rss,true,Europe/Podgorica,sr
+MT,Malta,Europe,540000,6,Times of Malta,https://timesofmalta.com,https://timesofmalta.com/rss,false,Europe/Malta,mt
+IS,Iceland,Europe,380000,6,RUV,https://www.ruv.is,https://www.ruv.is/rss/all.rss,true,Atlantic/Reykjavik,is
+AD,Andorra,Europe,77000,6,Diari Andorra,https://www.diariandorra.ad,https://www.diariandorra.ad/rss/home.xml,true,Europe/Andorra,ca
+LI,Liechtenstein,Europe,38000,6,Liechtensteiner Volksblatt,https://www.volksblatt.li,https://www.volksblatt.li/feed/,false,Europe/Vaduz,de
+MC,Monaco,Europe,36000,7,Monaco-Matin,https://www.monacomatin.mc,https://www.nicematin.com/monaco/rss,true,Europe/Monaco,fr
+SM,San Marino,Europe,34000,7,San Marino RTV,https://www.sanmarinortv.sm,https://www.sanmarinortv.sm/rss.xml,true,Europe/San_Marino,it
+VA,Vatican,Europe,800,7,Vatican News,https://www.vaticannews.va,https://www.vaticannews.va/fr/rss.html,false,Europe/Vatican,it
+US,United States,Amerique du Nord,340000000,1,NPR,https://www.npr.org,https://feeds.npr.org/1001/rss.xml,true,America/New_York,en
+MX,Mexico,Amerique du Nord,130000000,1,Animal Politico,https://www.animalpolitico.com,https://www.animalpolitico.com/feed/,false,America/Mexico_City,es
+CA,Canada,Amerique du Nord,40000000,1,CBC Radio-Canada,https://www.cbc.ca,https://www.cbc.ca/cmlink/rss-world,true,America/Toronto,en
+GT,Guatemala,Amerique du Nord,18000000,1,Plaza Publica,https://www.plazapublica.com.gt,https://www.plazapublica.com.gt/feed/,true,America/Guatemala,es
+HT,Haiti,Amerique du Nord,11700000,2,Le Nouvelliste,https://lenouvelliste.com,https://lenouvelliste.com/feed/,true,America/Port-au-Prince,fr
+DO,Dominican Republic,Amerique du Nord,11200000,2,acento.com.do,https://acento.com.do,https://acento.com.do/feed/,false,America/Santo_Domingo,es
+HN,Honduras,Amerique du Nord,10500000,2,Criterio.hn,https://criterio.hn,https://criterio.hn/feed/,true,America/Tegucigalpa,es
+NI,Nicaragua,Amerique du Nord,6800000,2,Confidencial,https://confidencial.digital,https://confidencial.digital/feed/,true,America/Managua,es
+SV,El Salvador,Amerique du Nord,6300000,3,El Faro,https://elfaro.net,https://elfaro.net/rss/,false,America/El_Salvador,es
+CR,Costa Rica,Amerique du Nord,5200000,3,La Nacion,https://www.nacion.com,https://www.nacion.com/rss/,true,America/Costa_Rica,es
+PA,Panama,Amerique du Nord,4400000,3,La Prensa Panama,https://www.prensa.com,https://www.prensa.com/rss/,false,America/Panama,es
+JM,Jamaica,Amerique du Nord,2900000,3,Jamaica Gleaner,https://jamaica-gleaner.com,https://jamaica-gleaner.com/rss.xml,true,America/Jamaica,en
+TT,Trinidad and Tobago,Amerique du Nord,1500000,4,Trinidad Express,https://trinidadexpress.com,https://trinidadexpress.com/feed/,false,America/Port_of_Spain,en
+BZ,Belize,Amerique du Nord,430000,4,Amandala,https://amandala.com.bz,https://amandala.com.bz/news/feed/,true,America/Belize,en
+BS,Bahamas,Amerique du Nord,400000,4,Nassau Guardian,https://thenassauguardian.com,https://thenassauguardian.com/feed/,false,America/Nassau,en
+BB,Barbados,Amerique du Nord,280000,4,Barbados Today,https://barbadostoday.bb,https://barbadostoday.bb/feed/,true,America/Barbados,en
+LC,Saint Lucia,Amerique du Nord,180000,5,St Lucia Times,https://stluciatimes.com,https://stluciatimes.com/feed/,true,America/St_Lucia,en
+GD,Grenada,Amerique du Nord,115000,5,Now Grenada,https://www.nowgrenada.com,https://www.nowgrenada.com/feed/,true,America/Grenada,en
+VC,Saint Vincent,Amerique du Nord,110000,5,iWitness News,https://iwnsvg.com,https://iwnsvg.com/feed/,true,America/St_Vincent,en
+AG,Antigua and Barbuda,Amerique du Nord,100000,6,Antigua Observer,https://www.antiguaobserver.com,https://www.antiguaobserver.com/feed/,true,America/Antigua,en
+DM,Dominica,Amerique du Nord,72000,6,Dominica News Online,https://dominicanewsonline.com,https://feeds.feedburner.com/DominicaNewsOnline/,true,America/Dominica,en
+KN,Saint Kitts and Nevis,Amerique du Nord,47000,7,The St Kitts-Nevis Observer,https://www.thestkittsnevisobserver.com,https://www.thestkittsnevisobserver.com/feed/,true,America/St_Kitts,en
+BR,Brazil,Amerique du Sud,216000000,1,Agencia Publica,https://apublica.org,https://apublica.org/feed/,true,America/Sao_Paulo,pt
+CO,Colombia,Amerique du Sud,52000000,1,La Silla Vacia,https://lasillavacia.com,https://lasillavacia.com/feed/,true,America/Bogota,es
+AR,Argentina,Amerique du Sud,46000000,2,Infobae,https://www.infobae.com,https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/,true,America/Argentina/Buenos_Aires,es
+PE,Peru,Amerique du Sud,33000000,2,Ojo Publico,https://ojo-publico.com,https://ojo-publico.com/feed/,false,America/Lima,es
+VE,Venezuela,Amerique du Sud,28000000,3,Efecto Cocuyo,https://efectococuyo.com,https://efectococuyo.com/feed/,true,America/Caracas,es
+CL,Chile,Amerique du Sud,19000000,3,CIPER Chile,https://www.ciperchile.cl,https://www.ciperchile.cl/feed/,true,America/Santiago,es
+EC,Ecuador,Amerique du Sud,18000000,4,GK.city,https://gk.city,https://gk.city/feed/,false,America/Guayaquil,es
+BO,Bolivia,Amerique du Sud,12000000,4,El Deber,https://eldeber.com.bo,https://eldeber.com.bo/feed/,true,America/La_Paz,es
+PY,Paraguay,Amerique du Sud,7400000,5,ABC Color,https://www.abc.com.py,https://www.abc.com.py/rss/,false,America/Asuncion,es
+UY,Uruguay,Amerique du Sud,3400000,5,La Diaria,https://ladiaria.com.uy,https://ladiaria.com.uy/feeds/articulos/,true,America/Montevideo,es
+GY,Guyana,Amerique du Sud,800000,6,Stabroek News,https://www.stabroeknews.com,https://www.stabroeknews.com/feed/,false,America/Guyana,en
+SR,Suriname,Amerique du Sud,600000,7,De Ware Tijd,https://www.dwtonline.com,https://www.dwtonline.com/feed/,true,America/Paramaribo,nl
+AU,Australia,Oceanie,27000000,1,The Guardian Australia,https://www.theguardian.com/au,https://www.theguardian.com/australia-news/rss,true,Australia/Sydney,en
+PG,Papua New Guinea,Oceanie,10000000,1,Post-Courier,https://www.postcourier.com.pg,https://www.postcourier.com.pg/feed/,true,Pacific/Port_Moresby,en
+NZ,New Zealand,Oceanie,5100000,2,RNZ,https://www.rnz.co.nz,https://www.rnz.co.nz/rss/world.xml,true,Pacific/Auckland,en
+FJ,Fiji,Oceanie,930000,2,Fiji Times,https://www.fijitimes.com,https://www.fijitimes.com/feed/,false,Pacific/Fiji,en
+SB,Solomon Islands,Oceanie,720000,3,Solomon Star,https://www.solomonstarnews.com,https://www.solomonstarnews.com/feed/,false,Pacific/Guadalcanal,en
+VU,Vanuatu,Oceanie,330000,3,Daily Post Vanuatu,https://www.dailypost.vu,https://www.dailypost.vu/feed/,false,Pacific/Efate,en
+WS,Samoa,Oceanie,220000,4,Samoa Observer,https://www.samoaobserver.ws,https://www.samoaobserver.ws/feed/,false,Pacific/Apia,sm
+KI,Kiribati,Oceanie,120000,4,RNZ Pacific,https://www.rnz.co.nz/international,https://www.rnz.co.nz/rss/pacific.xml,true,Pacific/Tarawa,en
+FM,Micronesia,Oceanie,115000,5,Pacific Islands Report,https://www.pireport.org,https://pireport.org/feed/,true,Pacific/Pohnpei,en
+TO,Tonga,Oceanie,100000,5,Matangi Tonga Online,https://matangitonga.to,https://matangitonga.to/rss.xml,true,Pacific/Tongatapu,to
+MH,Marshall Islands,Oceanie,42000,6,Marshall Islands Journal,https://www.marshallislandsjournal.com,https://marshallislandsjournal.com/feed/,true,Pacific/Majuro,en
+PW,Palau,Oceanie,18000,6,Tia Belau,https://www.tiabelau.com,,false,Pacific/Palau,pau
+TV,Tuvalu,Oceanie,11000,7,Islands Business,https://www.islandsbusiness.com,https://www.islandsbusiness.com/feed/,true,Pacific/Funafuti,tvl
+NR,Nauru,Oceanie,10000,7,Islands Business,https://www.islandsbusiness.com,https://www.islandsbusiness.com/feed/,true,Pacific/Nauru,en

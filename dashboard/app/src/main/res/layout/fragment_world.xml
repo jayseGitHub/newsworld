@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Stats bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="6dp">
+            <TextView android:id="@+id/text_total_articles" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:text="—"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total" android:textSize="10sp" android:textColor="@color/colorOnSurfaceDim"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="6dp">
+            <TextView android:id="@+id/text_today_articles" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:text="—"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aujourd'hui" android:textSize="10sp" android:textColor="@color/colorOnSurfaceDim"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="6dp">
+            <TextView android:id="@+id/text_pending_enrich" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/colorWarning" android:text="—"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="À enrichir" android:textSize="10sp" android:textColor="@color/colorOnSurfaceDim"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="6dp">
+            <TextView android:id="@+id/text_pending_translate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/colorWarning" android:text="—"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="À traduire" android:textSize="10sp" android:textColor="@color/colorOnSurfaceDim"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorOutline"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_countries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:clipToPadding="false"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
