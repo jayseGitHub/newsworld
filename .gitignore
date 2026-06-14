@@ -1,0 +1,30 @@
+# Maven
+target/
+
+# Java
+*.class
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime data — H2 dev databases and run logs
+data/*.db
+data/*.log
+
+# Spring Boot local overrides
+application-local.properties
+application-local.yml
+.env
+
+# Android dashboard build artifacts
+dashboard/app/build/
+dashboard/.gradle/
+dashboard/build/
+dashboard/local.properties
