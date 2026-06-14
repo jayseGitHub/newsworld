@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.List;
 
 @RestController
@@ -30,6 +31,13 @@ public class ClusterController {
     public List<ClusterDto> top() {
         return clusterRepository.findTop10ByOrderByRelevanceScoreDesc()
                 .stream().map(ClusterDto::from).toList();
+    }
+
+    @GetMapping("/days")
+    public List<Integer> days(@RequestParam String month) {
+        YearMonth ym = YearMonth.parse(month);
+        return clusterRepository.findDistinctClusterDatesBetween(ym.atDay(1), ym.atEndOfMonth())
+                .stream().map(LocalDate::getDayOfMonth).sorted().toList();
     }
 
     @GetMapping("/{id}")

@@ -19,6 +19,9 @@ public interface ArticleClusterRepository extends JpaRepository<ArticleCluster, 
 
     List<ArticleCluster> findTop10ByOrderByRelevanceScoreDesc();
 
+    @Query("SELECT DISTINCT c.clusterDate FROM ArticleCluster c WHERE c.clusterDate >= :start AND c.clusterDate <= :end ORDER BY c.clusterDate")
+    List<LocalDate> findDistinctClusterDatesBetween(@Param("start") LocalDate start, @Param("end") LocalDate end);
+
     @Query("SELECT c FROM ArticleCluster c LEFT JOIN FETCH c.articles WHERE c.id = :id")
     Optional<ArticleCluster> findByIdWithArticles(@Param("id") Long id);
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.YearMonth;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -49,6 +50,15 @@ public class LlmUsageController {
         ));
 
         return Map.of("date", target, "byModel", models, "byPipeline", pipelines);
+    }
+
+    @GetMapping("/days")
+    public List<Integer> days(@RequestParam String month) {
+        YearMonth ym = YearMonth.parse(month);
+        LocalDateTime start = ym.atDay(1).atStartOfDay();
+        LocalDateTime end = ym.atEndOfMonth().plusDays(1).atStartOfDay();
+        return llmUsageRepository.findCalledAtBetween(start, end)
+                .stream().map(dt -> dt.getDayOfMonth()).distinct().sorted().toList();
     }
 
     @GetMapping("/total")

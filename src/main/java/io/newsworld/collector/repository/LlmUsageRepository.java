@@ -28,4 +28,7 @@ public interface LlmUsageRepository extends JpaRepository<LlmUsage, Long> {
 
     @Query("SELECT COUNT(u), SUM(u.totalTokens) FROM LlmUsage u")
     List<Object[]> totals();
+
+    @Query("SELECT u.calledAt FROM LlmUsage u WHERE u.calledAt >= :start AND u.calledAt < :end")
+    List<LocalDateTime> findCalledAtBetween(@Param("start") LocalDateTime start, @Param("end") LocalDateTime end);
 }

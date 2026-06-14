@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.List;
 import java.util.Map;
 
@@ -68,7 +69,19 @@ public class NewsWorldApi {
         return get("/clusters/" + id, ClusterDto.class);
     }
 
+    // --- Clusters (calendar) ---
+
+    public List<Integer> getClusterDays(YearMonth month) throws IOException {
+        Type type = new TypeToken<List<Integer>>(){}.getType();
+        return getList("/clusters/days?month=" + month, type);
+    }
+
     // --- LLM Usage ---
+
+    public List<Integer> getUsageDays(YearMonth month) throws IOException {
+        Type type = new TypeToken<List<Integer>>(){}.getType();
+        return getList("/llm-usage/days?month=" + month, type);
+    }
 
     public List<LlmUsageDto> getLlmUsage(LocalDate date) throws IOException {
         String dateParam = date != null ? "?date=" + date : "";

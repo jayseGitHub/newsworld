@@ -9,26 +9,33 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.YearMonth;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import io.newsworld.dashboard.api.ApiClient;
 import io.newsworld.dashboard.api.NewsWorldApi;
 import io.newsworld.dashboard.databinding.FragmentUsageBinding;
 import io.newsworld.dashboard.model.LlmUsageDto;
 import io.newsworld.dashboard.ui.LlmUsageAdapter;
+import io.newsworld.dashboard.ui.MonthlyCalendarAdapter;
 
 public class UsageFragment extends Fragment {
 
-    private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("dd MMM yyyy");
-
     private FragmentUsageBinding binding;
     private LlmUsageAdapter adapter;
-    private LocalDate currentDate = LocalDate.now();
+    private MonthlyCalendarAdapter calendarAdapter;
+
+    private Calendar currentMonth;
+    private int selectedDay = -1;
 
     @Nullable @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,21 +47,54 @@ public class UsageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        currentMonth = Calendar.getInstance();
+        currentMonth.set(Calendar.DAY_OF_MONTH, 1);
+        selectedDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+
         adapter = new LlmUsageAdapter();
         binding.recyclerUsage.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recyclerUsage.setAdapter(adapter);
 
-        updateDateLabel();
-        binding.btnPrevDay.setOnClickListener(v -> { currentDate = currentDate.minusDays(1); updateDateLabel(); loadDay(); });
-        binding.btnNextDay.setOnClickListener(v -> { currentDate = currentDate.plusDays(1); updateDateLabel(); loadDay(); });
-        binding.swipeRefresh.setOnRefreshListener(this::loadDay);
+        calendarAdapter = new MonthlyCalendarAdapter(new MonthlyCalendarAdapter.Listener() {
+            @Override public void onPrevMonth() { shiftMonth(-1); }
+            @Override public void onNextMonth() { shiftMonth(1); }
+            @Override public void onDaySelected(int day) { selectDay(day); }
+        });
+        GridLayoutManager glm = new GridLayoutManager(requireContext(), 7);
+        glm.setSpanSizeLookup(calendarAdapter.getSpanSizeLookup());
+        binding.recyclerCalendar.setLayoutManager(glm);
+        binding.recyclerCalendar.setAdapter(calendarAdapter);
+
+        binding.swipeRefresh.setOnRefreshListener(() -> {
+            if (selectedDay > 0) loadDay(getSelectedDate());
+            else loadMonthDays();
+        });
 
         loadTotal();
-        loadDay();
+        refresh();
     }
 
-    private void updateDateLabel() {
-        if (binding != null) binding.textDate.setText(DATE_FMT.format(currentDate));
+    private void shiftMonth(int delta) {
+        currentMonth.add(Calendar.MONTH, delta);
+        selectedDay = -1;
+        hideSummary();
+        refresh();
+    }
+
+    private void selectDay(int day) {
+        selectedDay = (selectedDay == day) ? -1 : day;
+        calendarAdapter.setSelectedDay(selectedDay);
+        if (selectedDay > 0) loadDay(getSelectedDate());
+        else {
+            hideSummary();
+            adapter.submitList(Collections.emptyList());
+        }
+    }
+
+    private void refresh() {
+        loadMonthDays();
+        if (selectedDay > 0) loadDay(getSelectedDate());
+        else adapter.submitList(Collections.emptyList());
     }
 
     private void loadTotal() {
@@ -64,6 +104,43 @@ public class UsageFragment extends Fragment {
                 Map<String, Object> total = api.getLlmUsageTotal();
                 runOnUi(() -> renderTotal(total));
             } catch (Exception ignored) {}
+        });
+    }
+
+    private void loadMonthDays() {
+        if (binding == null) return;
+        YearMonth ym = toYearMonth(currentMonth);
+        NewsWorldApi api = new NewsWorldApi(requireContext());
+        ApiClient.get(requireContext()).executor().execute(() -> {
+            try {
+                List<Integer> days = api.getUsageDays(ym);
+                Set<Integer> daySet = new HashSet<>(days);
+                runOnUi(() -> calendarAdapter.setMonth(currentMonth, selectedDay, daySet));
+            } catch (Exception e) {
+                runOnUi(() -> calendarAdapter.setMonth(currentMonth, selectedDay, Collections.emptySet()));
+            }
+        });
+    }
+
+    private void loadDay(LocalDate date) {
+        if (binding == null) return;
+        binding.swipeRefresh.setRefreshing(true);
+        NewsWorldApi api = new NewsWorldApi(requireContext());
+        ApiClient.get(requireContext()).executor().execute(() -> {
+            try {
+                Map<String, Object> summary = api.getLlmUsageSummary(date);
+                List<LlmUsageDto> calls = api.getLlmUsage(date);
+                runOnUi(() -> {
+                    renderSummary(summary);
+                    adapter.submitList(calls);
+                    if (binding != null) binding.swipeRefresh.setRefreshing(false);
+                });
+            } catch (Exception e) {
+                runOnUi(() -> {
+                    if (binding != null) binding.swipeRefresh.setRefreshing(false);
+                    Toast.makeText(requireContext(), "Erreur: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                });
+            }
         });
     }
 
@@ -88,31 +165,6 @@ public class UsageFragment extends Fragment {
     }
 
     @SuppressWarnings("unchecked")
-    private void loadDay() {
-        if (binding == null) return;
-        binding.swipeRefresh.setRefreshing(true);
-        NewsWorldApi api = new NewsWorldApi(requireContext());
-        LocalDate date = currentDate;
-
-        ApiClient.get(requireContext()).executor().execute(() -> {
-            try {
-                Map<String, Object> summary = api.getLlmUsageSummary(date);
-                List<LlmUsageDto> calls = api.getLlmUsage(date);
-                runOnUi(() -> {
-                    renderSummary(summary);
-                    adapter.submitList(calls);
-                    binding.swipeRefresh.setRefreshing(false);
-                });
-            } catch (Exception e) {
-                runOnUi(() -> {
-                    if (binding != null) binding.swipeRefresh.setRefreshing(false);
-                    Toast.makeText(requireContext(), "Erreur: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                });
-            }
-        });
-    }
-
-    @SuppressWarnings("unchecked")
     private void renderSummary(Map<String, Object> summary) {
         if (binding == null || summary == null) return;
         StringBuilder sb = new StringBuilder();
@@ -127,13 +179,35 @@ public class UsageFragment extends Fragment {
                 }
             }
         }
-        binding.textSummary.setText(sb.isEmpty() ? "Aucune donnée" : sb.toString().trim());
+        if (sb.isEmpty()) {
+            hideSummary();
+        } else {
+            binding.textSummary.setText(sb.toString().trim());
+            binding.textSummary.setVisibility(View.VISIBLE);
+            binding.dividerSummary.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void hideSummary() {
+        if (binding == null) return;
+        binding.textSummary.setVisibility(View.GONE);
+        binding.dividerSummary.setVisibility(View.GONE);
+    }
+
+    private LocalDate getSelectedDate() {
+        Calendar c = (Calendar) currentMonth.clone();
+        c.set(Calendar.DAY_OF_MONTH, selectedDay);
+        return LocalDate.of(c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, selectedDay);
+    }
+
+    private YearMonth toYearMonth(Calendar c) {
+        return YearMonth.of(c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1);
     }
 
     private long toLong(Object val) {
-        if (val instanceof Double d) return d.longValue();
-        if (val instanceof Long l) return l;
-        if (val instanceof Number n) return n.longValue();
+        if (val instanceof Double d)  return d.longValue();
+        if (val instanceof Long l)    return l;
+        if (val instanceof Number n)  return n.longValue();
         return 0L;
     }
 
